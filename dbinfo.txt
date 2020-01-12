@@ -1,0 +1,41 @@
+Database 1 - Properties
+
+Id
+Address
+Town
+City
+Postcode
+
+Database 2 - Tenant
+tenantid
+tenantname
+tenantemail
+tenantphone
+
+Database 3 - Tenancy
+TenancyId
+StartDate
+EndDate
+Amount
+Frequency
+
+Database 4 - Accounts
+ItemId
+Date 
+Amount
+CreditDebit
+Details
+VatYesNo
+
+
+
+
+
+
+
+
+db user account name - s3w9snxzzuw7q@localhost
+
+
+
+
