@@ -1,0 +1,46 @@
+Create a connection.php that I can reuse across the site
+
+viewtenants.php - need add materialize + icon to add new tenant
+                - need edit and delete buttons on each tenancy line
+
+viewtenancy.php - do I need this screen.  Should tenancies be selectable via the property or tenant screen
+                  could just be a snapshot of current tenants, their start date, end date and amount, weekly and whether up to date     
+                  need a view previous tenancy button
+                  date should by uk format
+                - need edit and delete buttons on each tenancy line
+
+viewaccounts.php -  need to format date uk style
+                    need to fomat amount as currency £
+
+                
+
+
+
+
+    
+
+
+
+
+
+         working sql for viewtenancy.php
+
+          SELECT tenant.tenantname, properties.address, tenancy.tenancyamount, tenancy.tenancystartdate, tenancy.tenancyenddate, tenancy.tenancypaymentfreq, tenancy.arrears
+FROM ((tenancy
+         INNER JOIN tenant ON tenancy.tenantid = tenant.tenantid)
+         INNER JOIN properties ON tenancy.propertyid = properties.propertyid);
+         
+
+
+         itemdate, itemamount, itemdetails, propertyaddress, itemvatable
+
+
+
+
+working sql for viewaccounts.php
+         
+
+         SELECT accounts.itemdate, accounts.itemamount, accounts.itemdetails, properties.address, accounts.itemvatable
+FROM accounts
+         INNER JOIN properties ON properties.propertyid = accounts.itemid
+         

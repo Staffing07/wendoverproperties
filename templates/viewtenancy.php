@@ -8,7 +8,13 @@ if (!$conn) {
 }
 
 // Query to view all properties
-$sql = 'SELECT * FROM tenant ORDER BY tenantname';
+$sql = 'SELECT tenant.tenantname, properties.address, tenancy.tenancyamount, tenancy.tenancystartdate, tenancy.tenancyenddate, tenancy.tenancypaymentfreq, tenancy.arrears
+FROM ((tenancy
+         INNER JOIN tenant ON tenancy.tenantid = tenant.tenantid)
+         INNER JOIN properties ON tenancy.propertyid = properties.propertyid);';
+
+
+
 
 $result = mysqli_query($conn, $sql);
 
@@ -22,7 +28,7 @@ $result = mysqli_query($conn, $sql);
 }
 </style>
 
-<h4 class="center grey-text">Tenants</h4>
+<h4 class="center grey-text">Tenancies</h4>
 
 <div class="container">
     <div class="row">
@@ -31,10 +37,13 @@ $result = mysqli_query($conn, $sql);
         <table class="highlight table-row-highlight responsive-table">
             <thead>
                 <tr>
+                    <th>Property</th>
                     <th>Name</th>
-                    <th>Email</th>
-                    <th>Contact number</th>
-                    <th></th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Amount</th>
+                    <th>Frequency</th>
+                    <th>Arrears</th>
                 </tr>
             </thead>
 
@@ -45,12 +54,15 @@ $result = mysqli_query($conn, $sql);
             ?>
                 <tbody>
                     <tr>
+                        <td><?php echo htmlspecialchars($row['address']); ?></td>
                         <td><?php echo htmlspecialchars($row['tenantname']); ?></td>
-                        <td><?php echo htmlspecialchars($row['tenantemail']); ?></td>
-                        <td><?php echo htmlspecialchars($row['tenantphone']); ?></td>
-                        <td><a href="#" class="waves-effect waves-light btn-small right"><i class="material-icons left">edit</i>Edit</a></td>
+                        <td><?php echo htmlspecialchars($row['tenancystartdate']); ?></td>
+                        <td><?php echo htmlspecialchars($row['tenancyenddate']); ?></td>
+                        <td><?php echo htmlspecialchars($row['tenancyamount']); ?></td>
+                        <td><?php echo htmlspecialchars($row['tenancypaymentfreq']); ?></td>
+                        <td><?php echo htmlspecialchars($row['arrears']); ?></td>
                     </tr>
-                    
+
                 </tbody>
             <?php
             }
@@ -58,13 +70,7 @@ $result = mysqli_query($conn, $sql);
 
         </table>
 
-        
-        
-
     </div>
-    <div class="row">
-            <a href="#" class="btn-floating pulse right"><i class="material-icons">add</i></a>
-        </div>
 </div>
 
 <?php include('footer.php'); ?>

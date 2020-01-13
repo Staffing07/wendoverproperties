@@ -8,7 +8,12 @@ if (!$conn) {
 }
 
 // Query to view all properties
-$sql = 'SELECT * FROM tenant ORDER BY tenantname';
+$sql = 'SELECT accounts.itemdate, accounts.itemamount, accounts.itemdetails, properties.address, accounts.itemvatable
+FROM accounts
+         INNER JOIN properties ON properties.propertyid = accounts.itemid';
+
+
+
 
 $result = mysqli_query($conn, $sql);
 
@@ -22,7 +27,7 @@ $result = mysqli_query($conn, $sql);
 }
 </style>
 
-<h4 class="center grey-text">Tenants</h4>
+<h4 class="center grey-text">Accounts</h4>
 
 <div class="container">
     <div class="row">
@@ -31,10 +36,11 @@ $result = mysqli_query($conn, $sql);
         <table class="highlight table-row-highlight responsive-table">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Contact number</th>
-                    <th></th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Details</th>
+                    <th>Property</th>
+                    <th>Vatable?</th>
                 </tr>
             </thead>
 
@@ -45,12 +51,13 @@ $result = mysqli_query($conn, $sql);
             ?>
                 <tbody>
                     <tr>
-                        <td><?php echo htmlspecialchars($row['tenantname']); ?></td>
-                        <td><?php echo htmlspecialchars($row['tenantemail']); ?></td>
-                        <td><?php echo htmlspecialchars($row['tenantphone']); ?></td>
-                        <td><a href="#" class="waves-effect waves-light btn-small right"><i class="material-icons left">edit</i>Edit</a></td>
+                        <td><?php echo htmlspecialchars($row['itemdate']); ?></td>
+                        <td><?php echo htmlspecialchars($row['itemamount']); ?></td>
+                        <td><?php echo htmlspecialchars($row['itemdetails']); ?></td>
+                        <td><?php echo htmlspecialchars($row['address']); ?></td>
+                        <td><?php echo htmlspecialchars($row['itemvatable']); ?></td>
                     </tr>
-                    
+
                 </tbody>
             <?php
             }
@@ -58,13 +65,7 @@ $result = mysqli_query($conn, $sql);
 
         </table>
 
-        
-        
-
     </div>
-    <div class="row">
-            <a href="#" class="btn-floating pulse right"><i class="material-icons">add</i></a>
-        </div>
 </div>
 
 <?php include('footer.php'); ?>
