@@ -23,9 +23,35 @@ $result = mysqli_query($conn, $sql);
 <?php include('header.php'); ?>
 
 <style>
-   .table-row-highlight>tbody>tr:hover {
-    background-color: #b2dfdb !important;
-}
+    .table-row-highlight>tbody>tr:hover {
+        background-color: #b2dfdb !important;
+    }
+
+
+    .tenancy-table thead {
+        font-size: 0.6em;
+    }
+
+    .tenancy-table td {
+        font-size: 0.5em;
+    }
+
+    @media only screen and (min-width: 600px) {
+        .tenancy-table td {
+            font-size: 0.7em;
+        }
+    }
+
+    @media only screen and (min-width: 900px) {
+
+        .tenancy-table thead {
+            font-size: initial;
+        }
+
+        .tenancy-table td {
+            font-size: initial;
+        }
+    }
 </style>
 
 <h4 class="center grey-text">Tenancies</h4>
@@ -34,7 +60,7 @@ $result = mysqli_query($conn, $sql);
     <div class="row">
 
 
-        <table class="highlight table-row-highlight responsive-table">
+        <table class="highlight table-row-highlight tenancy-table">
             <thead>
                 <tr>
                     <th>Property</th>

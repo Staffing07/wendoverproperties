@@ -17,9 +17,19 @@ $result = mysqli_query($conn, $sql);
 <?php include('header.php'); ?>
 
 <style>
-   .table-row-highlight>tbody>tr:hover {
-    background-color: #b2dfdb !important;
-}
+    .table-row-highlight>tbody>tr:hover {
+        background-color: #b2dfdb !important;
+    }
+
+    .tenants-table td {
+        font-size: 0.8em;
+    }
+
+    @media only screen and (min-width: 990px) {
+        .tenants-table td {
+            font-size: 1em;
+        }
+    }
 </style>
 
 <h4 class="center grey-text">Tenants</h4>
@@ -28,12 +38,12 @@ $result = mysqli_query($conn, $sql);
     <div class="row">
 
 
-        <table class="highlight table-row-highlight responsive-table">
+        <table class="highlight table-row-highlight tenants-table">
             <thead>
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Contact number</th>
+                    <th>Contact</th>
                     <th></th>
                 </tr>
             </thead>
@@ -50,7 +60,7 @@ $result = mysqli_query($conn, $sql);
                         <td><?php echo htmlspecialchars($row['tenantphone']); ?></td>
                         <td><a href="#" class="waves-effect waves-light btn-small right"><i class="material-icons left">edit</i>Edit</a></td>
                     </tr>
-                    
+
                 </tbody>
             <?php
             }
@@ -58,13 +68,13 @@ $result = mysqli_query($conn, $sql);
 
         </table>
 
-        
-        
+
+
 
     </div>
     <div class="row">
-            <a href="#" class="btn-floating pulse right"><i class="material-icons">add</i></a>
-        </div>
+        <a href="#" class="btn-floating pulse right"><i class="material-icons">add</i></a>
+    </div>
 </div>
 
 <?php include('footer.php'); ?>
