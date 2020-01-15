@@ -25,6 +25,31 @@ $result = mysqli_query($conn, $sql);
    .table-row-highlight>tbody>tr:hover {
     background-color: #b2dfdb !important;
 }
+
+.accounts-table thead {
+        font-size: 0.6em;
+    }
+
+    .accounts-table td {
+        font-size: 0.5em;
+    }
+
+    @media only screen and (min-width: 600px) {
+        .accounts-table td {
+            font-size: 0.7em;
+        }
+    }
+
+    @media only screen and (min-width: 900px) {
+
+        .accounts-table thead {
+            font-size: initial;
+        }
+
+        .accounts-table td {
+            font-size: initial;
+        }
+    }
 </style>
 
 <h4 class="center grey-text">Accounts</h4>
@@ -33,7 +58,7 @@ $result = mysqli_query($conn, $sql);
     <div class="row">
 
 
-        <table class="highlight table-row-highlight responsive-table">
+        <table class="highlight table-row-highlight accounts-table">
             <thead>
                 <tr>
                     <th>Date</th>
@@ -56,6 +81,7 @@ $result = mysqli_query($conn, $sql);
                         <td><?php echo htmlspecialchars($row['itemdetails']); ?></td>
                         <td><?php echo htmlspecialchars($row['address']); ?></td>
                         <td><?php echo htmlspecialchars($row['itemvatable']); ?></td>
+                        <td><a href="#" class="waves-effect waves-light btn-small right"><i class="material-icons left">edit</i>Edit</a></td>
                     </tr>
 
                 </tbody>
@@ -65,6 +91,9 @@ $result = mysqli_query($conn, $sql);
 
         </table>
 
+    </div>
+    <div class="row">
+        <a href="#" class="btn-floating right"><i class="material-icons">add</i></a>
     </div>
 </div>
 

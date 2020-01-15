@@ -73,7 +73,7 @@ $result = mysqli_query($conn, $sql);
 
     </div>
     <div class="row">
-        <a href="#" class="btn-floating pulse right"><i class="material-icons">add</i></a>
+        <a href="#" class="btn-floating right"><i class="material-icons">add</i></a>
     </div>
 </div>
 

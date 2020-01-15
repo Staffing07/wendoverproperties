@@ -87,6 +87,7 @@ $result = mysqli_query($conn, $sql);
                         <td><?php echo htmlspecialchars($row['tenancyamount']); ?></td>
                         <td><?php echo htmlspecialchars($row['tenancypaymentfreq']); ?></td>
                         <td><?php echo htmlspecialchars($row['arrears']); ?></td>
+                        <td><a href="#" class="waves-effect waves-light btn-small right"><i class="material-icons left">edit</i>Edit</a></td>
                     </tr>
 
                 </tbody>
@@ -96,6 +97,9 @@ $result = mysqli_query($conn, $sql);
 
         </table>
 
+    </div>
+    <div class="row">
+        <a href="#" class="btn-floating right"><i class="material-icons">add</i></a>
     </div>
 </div>
 
