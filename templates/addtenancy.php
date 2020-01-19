@@ -46,7 +46,7 @@ print_r($properties);
 
 
             <div class="row">
-                <div class="col s6">
+                <div class="col m6">
                     <div class="input-field">
                         <i class="material-icons prefix">date_range</i>
                         <input id="tenancy_start_date" type="text" class="datepicker">
@@ -55,7 +55,7 @@ print_r($properties);
                     </div>
 
                 </div>
-                <div class="col s6">
+                <div class="col m6">
                     <div class="input-field">
                         <i class="material-icons prefix">date_range</i>
                         <input id="tenancy_end_date" type="text" class="datepicker">
@@ -67,17 +67,17 @@ print_r($properties);
             </div>
 
             <div class="row">
-                <div class="input-field col s4">
+                <div class="input-field col m4">
                     <i class="material-icons prefix">account_balance_wallet</i>
                     <input id="rent_amount" type="text">
                     <label for="rent_amount">Rent amount</label>
                 </div>
-                <div class="input-field col s4">
+                <div class="input-field col m4">
                     <i class="material-icons prefix">date_range</i>
                     <input id="tenancy_due_date" type="text" class="datepicker">
                     <label for="tenancy_due_date">Rent due date</label>
                 </div>
-                <div class="input-field col s4">
+                <div class="input-field col m4">
                     <i class="material-icons prefix">update</i>
                     <select id="rent_frequency">
                         <option>Please choose one</option>
