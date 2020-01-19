@@ -98,8 +98,9 @@ $result = mysqli_query($conn, $sql);
         </table>
 
     </div>
+    
     <div class="row">
-        <a href="#" class="btn-floating right"><i class="material-icons">add</i></a>
+        <a href="addtenancy.php" class="btn-floating right"><i class="material-icons">add</i></a>
     </div>
 </div>
 

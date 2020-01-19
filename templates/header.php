@@ -1,5 +1,7 @@
 <head>
   <meta charset="UTF-8">
+  <meta name="google" content="notranslate">
+  <meta http-equiv="Content-Language" content="en">
   <meta name="viewport" content="width=php test, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Wendover Properties</title>
@@ -18,11 +20,7 @@
     #logo {
       height: 2.3em;
     }
-
-  
-
-
-  </style>
+    </style>
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -35,15 +33,15 @@
       });
 
       document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, options);
-  });
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, options);
+      });
 
-  // Or with jQuery
+      // Or with jQuery
 
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
+      $(document).ready(function() {
+        $('.sidenav').sidenav();
+      });
     });
   </script>
 </head>
@@ -62,7 +60,7 @@
   <ul id="tenancy" class="dropdown-content">
     <li><a href="/templates/viewtenancy.php">View</a></li>
     <li class="divider"></li>
-    <li><a href="#!">Add</a></li>
+    <li><a href="/templates/addtenancy.php">Add</a></li>
     <li class="divider"></li>
     <li><a href="#!">Edit</a></li>
   </ul>

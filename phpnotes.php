@@ -68,6 +68,14 @@ EOD;
     <p><?php echo AFFILIATION; ?></p>
 
 
+GET & POST 
+
+Both methods can be used to send data to the server.
+
+GET sends the data in the URL so is seen in the address bar
+POST sends the data in the request header (and is therefore hidden and considered more secure)
+
+
 </body>
 
 </html>
