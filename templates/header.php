@@ -20,6 +20,12 @@
     #logo {
       height: 2.3em;
     }
+
+    form{
+      max-width: 460px;
+      margin: 20px auto;
+      padding: 20px; 
+    }
     </style>
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
   <!-- Compiled and minified JavaScript -->

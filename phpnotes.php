@@ -76,6 +76,8 @@ GET sends the data in the URL so is seen in the address bar
 POST sends the data in the request header (and is therefore hidden and considered more secure)
 
 
+<!-- <script>window.location = "http://www.thenetninja.co.uk"</script> Useful test to see whether form protected from XSS - if form sends you to the web address on submit then form is vulnerable-->
+
 </body>
 
 </html>
